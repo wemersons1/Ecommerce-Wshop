@@ -1,0 +1,31 @@
+           <h1>Todos os fornecedores</h1>
+            <?php foreach($var as $key => $value){  ?>
+                <a href="/fornecedores/todosprodutos?id=<?=$value['id_fornecedor']?>">
+                    
+                    <div class="produto">
+
+                        <div class="imagem">
+                            <img class="img" src="<?=$value['logo']?> " width="200" height="250">
+                        </div>
+
+                        <div>
+                            <h2><?=$value['nome_fornecedor']?>  </h2>
+                        
+                            <div class="descricao-fornecedor">
+                                <?=$value['descricao_fornecedor']?>
+                            </div>
+                            
+                            <div>
+                                Site: <?=$value['site']?>
+                            </div>
+                        </div>
+
+                        <div>  
+                            <a href="/fornecedor/editar?id=<?=$value['id_fornecedor']?>"><button><i class="fas fa-edit"></i></button>
+                            <a href="/fornecedor/excluir?id=<?=$value['id_fornecedor']?>"><button class="exluir"><i class="fas fa-trash-alt"></i></button></a>
+                        </div>
+
+                    </div>
+                </a>
+                
+            <?php }?>

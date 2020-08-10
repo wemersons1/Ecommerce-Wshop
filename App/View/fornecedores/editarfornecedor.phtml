@@ -1,0 +1,27 @@
+
+            <h1>Editar Fornecedor</h1>
+
+         
+            <form method = 'POST' action="/fornecedores/editarfornecedor" enctype="multipart/form-data"> 
+                <input type="hidden" name="id_fornecedor" value="<?=$var['id_fornecedor']?>">
+                <div>
+                    <label for="nome">Nome: </label>
+                    <input type="text" required id="nome", name="nome_fornecedor" value="<?=$var['nome_fornecedor']?>">
+                </div> 
+
+                <div>
+                    <label for="site">Site: </label>
+                    <input type="url" required id="site", name="site" value="<?=$var['site']?>">
+                </div>  
+
+                <div>
+                        <label for="imagem">Imagem: </imagem>
+                        <input required type="file" name="logo" id="imagem" > 
+                </div>
+
+                <div>
+                    <textarea required name="descricao"><?=$var['descricao_fornecedor']?></textarea>
+                </div>
+
+                <a href="/fornecedores/editarfornecedor"><button>Salvar</button></a>
+            </form>

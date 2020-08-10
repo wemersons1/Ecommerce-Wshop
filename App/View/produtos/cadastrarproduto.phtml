@@ -1,0 +1,46 @@
+<h1>Cadastro de produto</h1>
+
+<form method = 'POST' action="/salvarproduto" enctype="multipart/form-data"> 
+
+    <div>
+        <label for="nome">Nome: </label>
+        <input type="text" required id="nome", name="nome">
+    </div>  
+
+    <div>
+        <label for="preco">Preço: </label>
+        <input required type="number" id="preco", name="preco" step='0.01'>
+    </div>  
+
+<div>
+    <label for="fornecedor">Fornecedor</label>
+        <select required id="fornecedor" name="fornecedor">
+
+            <option disabled selected name="fornecedor">-- SELECIONE --</option>
+            
+            <?php
+                foreach($var as $key){
+
+            ?>
+                <option><?=$key['nome_fornecedor']?></option>
+            <?php
+            }
+            ?>
+        </select>
+</div>
+
+<div>
+    <label for="imagem">Imagem: </imagem>
+        <input required type="file" name="imagem" id="imagem" > 
+</div>
+
+<div>
+    <textarea required name="descricao" placeholder="Descrição..."></textarea>
+</div>
+
+<div>
+    <button>Cadastrar</button>
+</div>
+
+</form>
+

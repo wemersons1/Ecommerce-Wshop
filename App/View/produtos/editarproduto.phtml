@@ -1,0 +1,46 @@
+
+      <h1>Editar produto</h1>
+
+     
+      <form method = 'POST' action="/editarproduto" enctype="multipart/form-data"> 
+      
+            <input type="hidden" name="id" value="<?=$var['id']?>">
+            <div>
+                <label for="nome">Nome: </label>
+                <input type="text" required id="nome", name="nome" value="<?=$var['nome']?>">
+            </div>  
+
+            <div>
+                <label for="preco">Preço: </label>
+                <input required type="number" id="preco", name="preco" step='0.01' value="<?=$var['preco']?>">
+            </div>  
+            
+            <div>
+                <label for="fornecedor">Fornecedor</label>
+                    <select required id="fornecedor" name="fornecedor">
+                        <?php
+            
+                            foreach($var2 as $key => $value){
+                                if($value['id_fornecedor'] === $var['id_fornecedor']){
+                                    echo "<option selected>".$value['nome_fornecedor']."</option>";
+                                }
+                                else{
+                                    echo "<option>".$value['nome_fornecedor']."</option>";
+                                }
+                            }
+                        ?>
+  
+                    </select>
+            </div>
+
+            <div>
+                <label for="imagem">Imagem: </imagem>
+                <input required type="file" name="imagem" id="imagem" > 
+            </div>
+
+            <div>
+                <textarea required name="descricao"><?=$var['descricao']?></textarea>
+            </div>
+            
+            <a href="/editarproduto"><div><button>Salvar</button></div></a>
+    </form>
