@@ -27,4 +27,3 @@ O projeto foi desenvolvido usando as seguintes tecnologias
 
 - No prompt acessar a pasta public do projeto e digitar a instrução $ php -S localhost:8080/
 - Agora sua aplicação estará acessível no endereço localhost na porta 8080
-
