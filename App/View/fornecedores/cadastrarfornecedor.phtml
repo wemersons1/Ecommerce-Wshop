@@ -1,26 +1,27 @@
 
-      <h1>Cadastro de fornecedor</h1>
+      <h1 class="display-4 text-primary">Cadastro de fornecedor</h1>
 
      
       <form method = 'POST' action="/salvarfornecedor" enctype="multipart/form-data"> 
-        <div>
+        <div class="form-group">
             <label for="nome">Nome: </label>
-            <input required type="text" placeholder="Seu nome" id="nome", name="nome">
+            <input class="form-control" required type="text" placeholder="Seu nome" id="nome", name="nome">
         </div>  
    
-        <div>
-            <label for="logo">Logo: </imagem>
-            <input required type="file" name="logo" id="logo" > 
+        <div class="form-group">
+            <label for="logo">Logo: </label>
+            <input class="form-control-file" required type="file" name="logo" id="logo" > 
         </div>
        
-        <div>
-            <textarea required name="descricao" placeholder="Descrição..."></textarea>
+        <div class="form-group">
+            <textarea class="form-control" required name="descricao" placeholder="Descrição..."></textarea>
         </div>
 
-        <div>
-            <label for="site">Site: </label>
-            <input placeholder="http://www.exemplo.com" value="http://" type="url" name="site" id="site">
+        <div class="form-group">
+        <label for="site">Site: </label>
+            <input class="form-control" placeholder="http://www.exemplo.com" value="http://" type="url" name="site" id="site">
+             
         </div>
    
-            <div><button>Cadastrar</button></div>
+            <div><button class="btn btn-primary">Cadastrar</button></div>
         </form>

@@ -1,23 +1,23 @@
 
-      <h1>Editar produto</h1>
+      <h1 class="display-4 text-primary">Editar produto</h1>
 
      
       <form method = 'POST' action="/editarproduto" enctype="multipart/form-data"> 
       
             <input type="hidden" name="id" value="<?=$var['id']?>">
-            <div>
+            <div class="form-group">
                 <label for="nome">Nome: </label>
-                <input type="text" required id="nome", name="nome" value="<?=$var['nome']?>">
+                <input class="form-control" type="text" required id="nome", name="nome" value="<?=$var['nome']?>">
             </div>  
 
-            <div>
+            <div class="form-group">
                 <label for="preco">Preço: </label>
-                <input required type="number" id="preco", name="preco" step='0.01' value="<?=$var['preco']?>">
+                <input class="form-control"required type="number" id="preco", name="preco" step='0.01' value="<?=$var['preco']?>">
             </div>  
             
-            <div>
+            <div class="form-group">
                 <label for="fornecedor">Fornecedor</label>
-                    <select required id="fornecedor" name="fornecedor">
+                    <select class="form-control" required id="fornecedor" name="fornecedor">
                         <?php
             
                             foreach($var2 as $key => $value){
@@ -33,14 +33,19 @@
                     </select>
             </div>
 
-            <div>
-                <label for="imagem">Imagem: </imagem>
-                <input required type="file" name="imagem" id="imagem" > 
+            <div class="custom-file">
+                <label for="imagem">Imagem: </label>
+                <input class="custom-file-input" required type="file" name="imagem" id="imagem" > 
+                <label class="custom-file-label" for="imagem">Imagem</label>
+          
             </div>
 
-            <div>
-                <textarea required name="descricao"><?=$var['descricao']?></textarea>
+          
+                <input type="file" class="custom-file-input" id="customFile">
+                
+
+            <div class="form-group">
+                <textarea class="form-control" required name="descricao"><?=$var['descricao']?></textarea>
             </div>
-            
-            <a href="/editarproduto"><div><button>Salvar</button></div></a>
+            <button class="btn btn-outline-primary"><div>Salvar</button></div></button>
     </form>

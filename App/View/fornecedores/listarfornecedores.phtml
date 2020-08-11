@@ -1,31 +1,32 @@
            <h1>Todos os fornecedores</h1>
-            <?php foreach($var as $key => $value){  ?>
-                <a href="/fornecedores/todosprodutos?id=<?=$value['id_fornecedor']?>">
-                    
-                    <div class="produto">
+               <?php foreach($var as $key => $value){  ?>
+                <div class="row">
+                    <div class="col-md-3">
+                            <div class="card mb-3">
 
-                        <div class="imagem">
-                            <img class="img" src="<?=$value['logo']?> " width="200" height="250">
-                        </div>
+                                <a href="/fornecedores/todosprodutos?id=<?=$value['id_fornecedor']?>">
+                                    <img class="card-img-top" src="<?=$value['logo']?> " width="200" height="250">
+                                </a>
+                                <div class="card-body">
+                                    <h2 class="card-title"><?=$value['nome_fornecedor']?></h2>
+                                
+                                    <div class="card-text">
+                                        <?=$value['descricao_fornecedor']?>
+                                    </div>
+                                    
+                                    <div class="card-text">
+                                        Site: <?=$value['site']?>
+                                    </div>
+                                </div>
 
-                        <div>
-                            <h2><?=$value['nome_fornecedor']?>  </h2>
-                        
-                            <div class="descricao-fornecedor">
-                                <?=$value['descricao_fornecedor']?>
+                                <div>  
+                                    <a class="btn btn-warning" href="/fornecedor/editar?id=<?=$value['id_fornecedor']?>"><i class="fas fa-edit"></i></a>
+                                    <a class="btn btn-danger" href="/fornecedor/excluir?id=<?=$value['id_fornecedor']?>"><i class="fas fa-trash-alt"></i></a>
+                                </div>
+
                             </div>
-                            
-                            <div>
-                                Site: <?=$value['site']?>
-                            </div>
-                        </div>
-
-                        <div>  
-                            <a href="/fornecedor/editar?id=<?=$value['id_fornecedor']?>"><button><i class="fas fa-edit"></i></button>
-                            <a href="/fornecedor/excluir?id=<?=$value['id_fornecedor']?>"><button class="exluir"><i class="fas fa-trash-alt"></i></button></a>
-                        </div>
-
+                       
                     </div>
-                </a>
+                </div>
                 
             <?php }?>

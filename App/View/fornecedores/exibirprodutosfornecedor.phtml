@@ -1,33 +1,35 @@
 
 
-    <h1>Todos os produtos</h1>
-    <h1 class="fornecedor"><?=$var[0]['nome']?></h1>
+    <h1 class="display-4 text-primary">Todos os produtos</h1>
+    <h1 class="display-4 text-primary"><?=$var[0]['nome']?></h1>
 
         <?php
         
             foreach($var as $key=> $var){
 
         ?>
-                <div class="produto">
+        <div class="row">
+                <div class="card col-md-3 mb-3">
 
-                    <div class="imagem">
-                            <img class="img" src="<?="/".$var['imagem']?>" width="200" height="250">
-                    </div>
+                    <img class="card-img-top" src="<?="/".$var['imagem']?>" width="200" height="250">                   
 
-                    <div class="info" id="info">
-                        <h2 id="nome"><?=$var['nome']?> </h2>
-                        <h2 id="preco" class="preco">R$<?=$var['preco']?></h2>
+                    <div class="card-body" id="info">
+                        <h2 class="card-title" id="nome"><?=$var['nome']?> </h2>
+                        <h2 id="preco" class="card-title">R$<?=$var['preco']?></h2>
                         
-                        <div id="descricao" class="descricao">
+                        <div id="descricao" class="card-text">
                             <?=$var['descricao']?> 
                         </div>
                     </div>
                     <div>
-                        <a href="/editar?id=<?=$var['id']?>"><button><i class="fas fa-edit"></i></button>
-                        <a href="/excluir?id=<?=$var['id']?>"> <button class="exluir"><i class="fas fa-trash-alt"></i></button></a>
-                    </div>
+                        <a class="btn btn-warning" href="/editar?id=<?=$var['id']?>"><i class="fas fa-edit"></i></a>
+                        <a class="btn btn-danger" href="/excluir?id=<?=$var['id']?>"><i class="fas fa-trash-alt"></i></a>
+                 </div>
+                  
 
                 </div>
+               
+        </div>
             <?php
             }
             ?>

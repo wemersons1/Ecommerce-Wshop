@@ -1,32 +1,31 @@
-<h1>Todos os produtos</h1>
+<h1 class="display-4 text-primary">Todos os produtos</h1>
         
         <?php foreach($var as $key => $value){
             
          ?>
             <a href="/produto?id=<?=$value['id']?>">
-                <div class="produto">
+                <div class="row">
+                    <div class="col-md-3">
+                       <div class="card mb-3">
+                            <img class="card-img-top" src="<?=$value['imagem']?> " width="200" height="250">
+                            <div class="card-body">
+                                <h2 class="card-title"><?=$value['nome']?></h2>
+                                
+                                <a class="text-success" 
+                                    href="/fornecedores/todosprodutos?id=<?=$value['id_fornecedor']?>&nome=<?=$value['nome_fornecedor']?>">
+                                    Marca: <?=$value['nome_fornecedor']?>
+                                </a>
+                            
+                                <h2 class="card-title">R$<?=$value['preco']?></h2>
+                            
+                                <div class="card-text">
+                                    Descrição: <?=$value['descricao']?> 
+                                </div>
+                            </div>
 
-                    <div class="imagem">
-                            <img class="img" src="<?=$value['imagem']?> " width="200" height="250">
-                      
-                    </div>
 
-                    <div class="info">
-                        <h2><?=$value['nome']?></h2>
-                        
-                        <a class="fornecedor" 
-                            href="/fornecedores/todosprodutos?id=<?=$value['id_fornecedor']?>&nome=<?=$value['nome_fornecedor']?>">
-                            Marca: <?=$value['nome_fornecedor']?>
-                        </a>
-                    
-                        <h2 class="preco">R$<?=$value['preco']?></h2>
-                    
-                        <div class="descricao">
-                            Descrição: <?=$value['descricao']?> 
                         </div>
                     </div>
-
-
                 </div>
             </a>
 

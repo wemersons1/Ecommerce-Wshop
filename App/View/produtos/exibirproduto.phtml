@@ -1,35 +1,35 @@
           
-                <h1>Produto</h1>
-                <div class="produto">
+<h1 class="display-4 text-primary">Produto</h1>
 
-                    <div class="imagem">
-                            <img class="img" src="<?=$var['imagem']?> " width="200" height="250">
-                    </div>
-
-                    <div class="info" id="info">
-                        <h2 id="nome"><?=$var['nome']?> (<?=$var['nome_fornecedor']?>) </h2>
-                        <h2 id="preco" class="preco">R$<?=$var['preco']?></h2>
-                        
-                        <div id="descricao" class="descricao">
-                            <?=$var['descricao']?> 
-                        
-                            <div class="atualizacao">
-                                <h3>Receba atualizações</h3>
-                                <input class="atualizacao" type="email" placeholder="Digite seu melhor e-mail">
-                                <button class="atualizacao">Cadastrar</button>
-                            </div>
-                         
+<div> 
+    <div class="row">
+        <div class="col-md-5  d-flex">
+            <div class="card">                 
+                <img  class="card-img-top" src="<?=$var['imagem']?> " width="200">
+                <div class="card-body" id="info">
+                    <h2 class="card-title" id="nome"><?=$var['nome']?> (<?=$var['nome_fornecedor']?>) </h2>
+                    <h2 class="card-title" id="preco" class="preco">R$ <?=$var['preco']?></h2>
+                    
+                    <div class="card-text" id="descricao" class="descricao">
+                        <?=$var['descricao']?> 
+                    
+                        <div class="form-group">
+                            <h3 class="text-success">Receba atualizações</h3>
+                            <input class="form-control" type="email" placeholder="Digite seu melhor e-mail">
+                            <button class="btn btn-outline-info">Cadastrar</button>
                         </div>
-                       
+                    
+                
                     </div>
-       
-                    <div>
-                       
-                    <a href="/editar?id=<?=$var['id']?>"><button><i class="fas fa-edit"></i></button>
-
-                    <a href="/excluir?id=<?=$var['id']?>"> <button class="exluir"><i class="fas fa-trash-alt"></i></button></a>
-
-                    </div>
-
-
+                
                 </div>
+            </div>
+
+            <div class="d-flex">
+                <a class="ml-2" href="/editar?id=<?=$var['id']?>"><button class="btn btn-outline-warning"><i class="fas fa-edit"></i></button>
+
+                <a class="ml-2" href="/excluir?id=<?=$var['id']?>"> <button class="btn btn-outline-danger"><i class="fas fa-trash-alt"></i></button></a>
+            </div>
+            
+        </div>      
+</div>
