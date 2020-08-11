@@ -14,7 +14,7 @@ class Bd{
             
         }catch(\PDOException $e){
             
-            throw new Exception("Erro ao conectar no banco");
+            echo "Erro ao conectar no banco";
         }
     
     }
